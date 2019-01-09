@@ -1,4 +1,3 @@
-import Ember from 'ember';
 import DS from 'ember-data';
 import { underscore } from '@ember/string';
 import { pluralize } from 'ember-inflector';
