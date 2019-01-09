@@ -1,8 +1,7 @@
 import Ember from 'ember';
 import DS from 'ember-data';
 import { capitalize } from '@ember/string';
-
-const { String: { singularize } } = Ember;
+import { singularize } from 'ember-inflector';
 
 export default DS.JSONAPISerializer.extend({
   payloadKeyFromModelName(modelName) {
