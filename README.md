@@ -20,7 +20,8 @@ You will need the following things properly installed on your computer.
 
 ## Running / Development
 
-* `ember serve`
+* `ember server --proxy http://localhost:3000`
+* Make sure `rails server` is running from the `bookstore-api` repository
 * Visit your app at [http://localhost:4200](http://localhost:4200).
 * Visit your tests at [http://localhost:4200/tests](http://localhost:4200/tests).
 
