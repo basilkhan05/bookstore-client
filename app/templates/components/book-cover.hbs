@@ -1,23 +1,35 @@
-<li {{action "open"}} role="button">
+<li {{action "openPurchaseConfirmation"}} role="button">
   <strong>{{book.title}}</strong><br><br>
   <em>by</em>
   {{link-to book.author.name "author" book.author.id class="author" }}
 </li>
-{{#if isShowingModal}}
+{{#if isShowingPurchaseModal}}
   {{#modal-dialog close="close" clickOutsideToClose=true}}
 
-    <div class="modal">
+    <div class="modal modal-purchase-confirmation">
       <h3>Purchase confirmation</h3>
       You want to buy <strong>{{book.title}}</strong> by {{book.author.name}}.
-
-      <p>
-        <button {{action "close"}}>Purchase for ${{book.price}}!</button>
+      <p {{action "openThankYouMessage"}}>
+        <button>Purchase for ${{book.price}}!</button>
       </p>
-
       <p>
-        <em>Thank you! We will e-mail you your e-book</em>
+        <button {{action "close"}}>Cancel</button>
       </p>
+    </div>
 
+  {{/modal-dialog}}
+{{/if}}
+{{#if isShowingThankYouModal}}
+  {{#modal-dialog close="close" clickOutsideToClose=true}}
+
+    <div class="modal modal-thank-you">
+      <h3>Thank you</h3>
+      <p>
+        <em>Thank you for your purchase! We will e-mail you your e-book</em>
+      </p>
+      <p>
+        <button {{action "close"}}>Close</button>
+      </p>
     </div>
 
   {{/modal-dialog}}
