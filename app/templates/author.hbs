@@ -1,6 +1,11 @@
 <h3>{{model.name}}</h3>
 
-<strong>Biography</strong>: {{model.biography}}
+<strong>Biography</strong>: 
+{{#if model.biography}}
+  {{model.biography}}
+{{else}}
+  <em>Biography not available</em>
+{{/if}}
 
 <h4>Published titles:</h4>
 <ul>
