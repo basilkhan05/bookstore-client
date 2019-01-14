@@ -9,8 +9,8 @@
     <div class="modal modal-purchase-confirmation">
       <h3>Purchase confirmation</h3>
       You want to buy <strong>{{book.title}}</strong> by {{book.author.name}}.
-      <p {{action "openThankYouMessage"}}>
-        <button>Purchase for ${{book.price}}!</button>
+      <p>
+        <button {{action "openThankYouMessage"}}>Purchase for ${{book.price}}!</button>
       </p>
       <p>
         <button {{action "close"}}>Cancel</button>
