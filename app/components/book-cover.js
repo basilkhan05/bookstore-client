@@ -12,6 +12,7 @@ export default Component.extend({
     },
 
     openThankYouMessage() {
+      this.set('isShowingPurchaseModal', false);
       this.set('isShowingThankYouModal', true);
     },
 
