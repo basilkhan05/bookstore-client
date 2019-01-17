@@ -12,13 +12,17 @@ export default Component.extend({
     },
 
     openThankYouMessage() {
-      this.set('isShowingPurchaseModal', false);
-      this.set('isShowingThankYouModal', true);
+      this.setProperties({
+        isShowingPurchaseModal: false,
+        isShowingThankYouModal: true
+      });
     },
 
     close() {
-      this.set('isShowingPurchaseModal', false);
-      this.set('isShowingThankYouModal', false);
+      this.setProperties({
+        isShowingPurchaseModal: false,
+        isShowingThankYouModal: false
+      });
       this.get('blurBackground')(false);
     }
 
