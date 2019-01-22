@@ -4,15 +4,25 @@ export default Component.extend({
 
   actions: {
 
-    open() {
+    openPurchaseConfirmation() {
       this.get('book').reload().then(() => {
-        this.set('isShowingModal', true);
+        this.set('isShowingPurchaseModal', true);
         this.get('blurBackground')(true);
       });
     },
 
+    openThankYouMessage() {
+      this.setProperties({
+        isShowingPurchaseModal: false,
+        isShowingThankYouModal: true
+      });
+    },
+
     close() {
-      this.set('isShowingModal', false);
+      this.setProperties({
+        isShowingPurchaseModal: false,
+        isShowingThankYouModal: false
+      });
       this.get('blurBackground')(false);
     }
 
